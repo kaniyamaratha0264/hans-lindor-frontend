@@ -1,0 +1,27 @@
+<div>
+  <input name="senderId" placeholder="User 1" value="" (change)="getId($event, 1)" />
+  <input name="receiverId" placeholder="User 2" value="" (change)="getId($event, 2)" />
+</div>
+
+<div class="container">
+  <!-- <input ngx-google-places-autocomplete (onAddressChange)="handleOriginAddressChange($event)" /> -->
+
+  <!-- <p>Address: {{ OriginAddress }}</p> -->
+  <p>User 1:</p>
+  <p>Latitude: {{ lat }}</p>
+  <p>Longitude: {{ lng }}</p>
+</div>
+<div class="container">
+  <!-- <input ngx-google-places-autocomplete (onAddressChange)="handleDestinationAddressChange($event)" /> -->
+
+  <!-- <p>Address: {{ DestinationAddress }}</p> -->
+  <p>User 2:</p>
+  <p>Latitude: {{ lat1 }}</p>
+  <p>Longitude: {{ lng1 }}</p>
+</div>
+
+<br><br>
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  <agm-direction *ngIf="dir" [origin]="dir.origin" [destination]="dir.destination" ></agm-direction>
+</agm-map>
