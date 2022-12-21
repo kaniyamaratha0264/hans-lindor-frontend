@@ -39,7 +39,7 @@ export class AppComponent implements OnInit{
           this.lng= position.coords.longitude;
       });
     }
-    this.socket = io("https://hans-lindor-backend.vercel.app/");
+    this.socket = io("https://hans-lindor-backend.vercel.app");
   }
   async ngAfterViewInit() {
     console.log(this.route.snapshot.paramMap.get('id'));
